@@ -24,6 +24,7 @@ module Value = struct
     | Number n -> Float.sexp_of_t n
     | String s -> String.sexp_of_t s
     | _ as t -> to_string t |> String.sexp_of_t
+    [@@ocaml.warning "-32"]
 
   let built_in_formats =
     (* FIXME: This is only the English format codes. There are 4 Asian format
